@@ -1,0 +1,20 @@
+# Ignore modulos node
+node_modules
+
+# Ignore arquivos relacionados às chaves de API
+.env
+
+# Ignore arquivos de configuração de SASS
+.sass-cache
+
+# Ignore Workspace VsCode
+Estudos.code-workspace
+
+# Ignore informações pessoais
+labenuDevFullStack/contratos/*
+certificacoes/*
+nvb-*
+estacioDevFullStack/documentosPessoais/
+
+# Ignore informações de configurações
+*.JSON
