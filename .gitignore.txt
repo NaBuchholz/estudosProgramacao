@@ -1,0 +1,12 @@
+# Ignore as pastas sensiveis
+node_modules
+labenuDevFullStack/contratos
+certificacoes
+nvb-*
+# Ignore arquivos relacionados às chaves de API
+.env
+# Ignore arquivos de configuração de SASS
+.sass-cache
+# Ignore Workspace VsCode
+Estudos.code-workspace
+*.JSON
