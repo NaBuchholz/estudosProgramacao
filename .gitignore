@@ -15,6 +15,7 @@ labenuDevFullStack/contratos/*
 certificacoes/*
 nvb-*
 estacioDevFullStack/documentosPessoais/
+estacioDevFullStack/mundo1/ementas/
 
 # Ignore informações de configurações
 *.JSON
