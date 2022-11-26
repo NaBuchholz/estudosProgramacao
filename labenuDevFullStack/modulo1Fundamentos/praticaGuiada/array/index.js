@@ -40,7 +40,7 @@ console.table(novoArrayCopia);
 // Imprima os dois arrays. Há diferença?
 console.log("Array original",arrayDeStrings);
 console.log("Array com push",novoArrayCopia);
-    //criam uma referência por isso push no copia é tbm push no original (estão na mesma posição na memória)
+//criam uma referência por isso push no copia é tbm push no original (estão na mesma posição na memória)
 // Como podemos ajustar?
 const consertoArrayCopia = arrayDeStrings.slice()
 consertoArrayCopia.push("Labenu")
