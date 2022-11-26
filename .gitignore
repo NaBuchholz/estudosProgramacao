@@ -12,7 +12,7 @@ Estudos.code-workspace
 
 # Ignore informações pessoais
 labenuDevFullStack/contratos/*
-certificacoes/*
+certificacoes/
 nvb-*
 estacioDevFullStack/documentosPessoais/
 estacioDevFullStack/mundo1/ementas/
