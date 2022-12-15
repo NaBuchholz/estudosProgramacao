@@ -1,0 +1,17 @@
+#titulo-importante {
+	background-color: blue;
+	color: white;
+}
+h2{
+  background-color: yellow;
+}
+section{
+  background-color: green;
+}
+.titulo-secao{
+  color: white;
+}
+footer{
+  background-color: black;
+  color: white;
+}
