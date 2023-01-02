@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.border {
+    border: 1px solid black;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    align-items: center; 
+}
+
+
+.lado-esquerdo {
+     flex-grow: 2;
+}
+
+.lado-direito {
+    flex-grow: 1;
+}
+
+article {
+    flex-grow: 3;
+}
+
+main {
+    background-color:antiquewhite;
+    flex-grow: 1;
+    display: flex;
+}
+
+footer {
+    background-color: burlywood;
+    
+}
