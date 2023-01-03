@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+  }
+  
+  #item-1 {
+    background-color: steelblue;
+  }
+  
+  #item-2 {
+    background-color: #fe7e02;
+  }
+  
+  #item-3 {
+    background-color: #45525b;
+  }
+  
