@@ -1,0 +1,26 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+main {
+	display: grid;
+	grid-template-rows: repeat(5, 20vh);
+}
+section {
+	border: 1px solid black;
+	display: grid;
+	justify-content: center;
+	color: orange;
+}
+
+@media screen and (min-width: 1024px) {
+	main {
+		grid-template-columns: repeat(3, 33vw);
+		grid-template-rows: 40vh 40vh;
+	}
+	section {
+		color: black;
+		align-items: center;
+	}
+}
