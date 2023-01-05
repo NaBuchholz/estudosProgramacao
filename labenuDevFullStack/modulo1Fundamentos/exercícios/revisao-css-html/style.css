@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', sans-serif;
+}
+main {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-container {
+	display: flex;
+	justify-content: space-between;
+	background: #729f92;
+	border-radius: 12px;
+	height: 13.125rem;
+	width: 27.5rem;
+}
+.pokemon-container {
+	display: flex;
+	margin: 1rem;
+	color: rgb(255, 255, 255);
+	flex-direction: column;
+	column-count: 2;
+	justify-content: space-between;
+}
+.pokemon-type {
+	display: flex;
+	width: 12.688rem;
+	justify-content: space-between;
+}
+
+.pokemon-container h2 {
+	text-decoration-line: underline;
+	font-size: 16px;
+}
+#pokemon-image {
+	position: absolute;
+	margin-left: 12rem;
+	margin-top: -3.8rem;
+}
+#botao-capturar {
+	align-self: end;
+	margin: 1rem;
+	width: 9.125rem;
+	height: 2.05rem;
+	background: #ffffff;
+	border-radius: 8px;
+	padding: 0.25rem 0.625rem;
+	border: none;
+	font-family: 'Poppins', sans-serif;
+	z-index: 1;
+}

@@ -1,0 +1,85 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	color: white;
+}
+
+#main-container {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+#main-container div {
+	display: flex;
+	justify-content: center;
+}
+#top-container {
+	flex-grow: 0.5;
+}
+#middle-container {
+	flex-grow: 2;
+}
+#vertical-middle-container {
+	flex-flow: column nowrap;
+	flex-grow: 0.5;
+}
+#content2 {
+	flex-grow: 1;
+}
+#image {
+	flex-grow: 1;
+}
+#extra {
+	flex-grow: 1;
+}
+#blank {
+	flex-grow: 0.5;
+}
+/* Background colors */
+.green-background {
+	background-color: green;
+	flex-grow: 1;
+	align-items: center;
+}
+
+.yellow-background {
+	background-color: yellow;
+	flex-grow: 3;
+	align-items: center;
+}
+
+.pink-background {
+	background-color: fuchsia;
+	flex: 3;
+	align-items: center;
+}
+
+.blue-background {
+	background-color: blue;
+	flex-grow: 2;
+	align-items: center;
+}
+
+.red-background {
+	background-color: red;
+	flex-grow: 1;
+	align-items: center;
+}
+
+.lightgreen-background {
+	background-color: lightgreen;
+	flex-grow: 1;
+	align-items: center;
+}
+
+div > .purple-background {
+	background-color: purple;
+	flex-grow: 1;
+	align-items: center;
+}
+#main-container > div:last-child {
+	flex-grow: 0.5;
+}
