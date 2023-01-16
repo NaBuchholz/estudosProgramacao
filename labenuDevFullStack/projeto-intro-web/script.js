@@ -1,90 +1,62 @@
 //Tópico escolhido para desenvolvimento: Países
 //Características chave: Nome, População, Governo,Continente, Organizações internacionais, Idioma, Está em guerra?
-const countryName = '';
-const countryPopulation = 0;
-const inWar = true;
-const countryContinent = '';
-let countryIos = [];
-const countryLenguage = [];
-let countryGovernment = '';
+class Country {
+	constructor(
+		countryName,
+		countryPopulation,
+		countryContinent,
+		countryGovernment,
+		countryIos,
+		countryLenguage,
+		inWar
+	) {
+		(this.countryName = countryName),
+			(this.countryPopulation = countryPopulation),
+			(this.countryContinent = countryContinent),
+			(this.countryGovernment = countryGovernment),
+			(this.countryIos = countryIos),
+			(this.countryLenguage = countryLenguage),
+			(this.inWar = inWar);
+	}
+}
+const brasil = new Country(
+	'Brasil',
+	213317639,
+	'América',
+	'República',
+	['ONU', 'UNESCO'],
+	['Português'],
+	false
+);
+const canada = new Country(
+	'Canada',
+	38005238,
+	'América',
+	'Monarquia Constitucional',
+	['UNESCO', 'OMS'],
+	['Inglês', 'Francês'],
+	false
+);
+const russia = new Country(
+	'Russia',
+	144526636,
+	'Ásia',
+	'Semipresidencialista',
+	['OTAM'],
+	['Russo'],
+	true
+);
+const arrayCountries = [];
 
-const countryName1 = 'Brasil';
-const countryPopulation1 = 213317639;
-const inWar1 = false;
-const countryContinent1 = 'América';
-let countryIos1 = ['ONU', 'UNESCO'];
-const countryLenguage1 = ['Português'];
-let countryGovernment1 = 'República';
+arrayCountries.push(brasil, canada, russia);
 
-const countryName2 = 'Canada';
-const countryPopulation2 = 38005238;
-const inWar2 = false;
-const countryContinent2 = 'América';
-let countryIos2 = ['UNESCO', 'OMS'];
-const countryLenguage2 = ['Inglês', 'Francês'];
-let countryGovernment2 = 'Monarquia constitucional';
+//teste
 
-const countryName3 = 'Russia';
-const countryPopulation3 = 144526636;
-const inWar3 = true;
-const countryContinent3 = 'Ásia';
-let countryIos3 = ['OTAM'];
-const countryLenguage3 = ['Russo'];
-let countryGovernment3 = 'Semipresidencialista';
+console.log(arrayCountries);
 
 let averagePopulation =
-	(countryPopulation1 + countryPopulation2 + countryPopulation3) / 3;
+	(brasil.countryPopulation + canada.countryPopulation + russia.countryPopulation) / 3;
 
-console.log('Average Population: ' + averagePopulation);
+const globalWar = brasil.inWar && canada.inWar && russia.inWar;
 
-const countryWar = inWar1 && inWar2 && inWar3;
-
-console.log('Is everyone at war? ' + countryWar);
-
-console.log(
-	countryName1.toUpperCase() +
-		'\nPopulation: ' +
-		countryPopulation1 +
-		'\nContinent: ' +
-		countryContinent1 +
-		'\nGovernment: ' +
-		countryGovernment1 +
-		'\nLenguage: ' +
-		countryLenguage1 +
-		'\nis in war? ' +
-		inWar1 +
-		'\nInternational Organization in: ' +
-		countryIos1
-);
-
-console.log(
-	countryName2.toUpperCase() +
-		'\nPopulation: ' +
-		countryPopulation2 +
-		'\nContinent: ' +
-		countryContinent2 +
-		'\nGovernment: ' +
-		countryGovernment2 +
-		'\nLenguage: ' +
-		countryLenguage2 +
-		'\nis in war? ' +
-		inWar2 +
-		'\nInternational Organization in: ' +
-		countryIos2
-);
-
-console.log(
-	countryName3.toUpperCase() +
-		'\nPopulation: ' +
-		countryPopulation3 +
-		'\nContinent: ' +
-		countryContinent3 +
-		'\nGovernment: ' +
-		countryGovernment3 +
-		'\nLenguage: ' +
-		countryLenguage3 +
-		'\nis in war? ' +
-		inWar3 +
-		'\nInternational Organization in: ' +
-		countryIos3
-);
+//Características chave: Nome, População, Governo,Continente, Organizações internacionais, Idioma, Está em guerra?
