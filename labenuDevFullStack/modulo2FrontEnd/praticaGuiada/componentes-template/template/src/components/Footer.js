@@ -3,8 +3,10 @@ import RedesSociais from './RedesSociais';
 import Copywrite from './Copywrite';
 
 export default function Footer() {
-	<div>
-		<RedesSociais />
-		<Copywrite />
-	</div>;
+	return (
+		<div>
+			<RedesSociais />
+			<Copywrite />
+		</div>
+	);
 }
