@@ -46,17 +46,54 @@ const russia = new Country(
 	['Russo'],
 	true
 );
-const arrayCountries = [];
-
-arrayCountries.push(brasil, canada, russia);
-
-//teste
-
-console.log(arrayCountries);
-
+const globalWar = brasil.inWar && canada.inWar && russia.inWar;
 let averagePopulation =
 	(brasil.countryPopulation + canada.countryPopulation + russia.countryPopulation) / 3;
+const arrayCountries = [russia, brasil, canada];
 
-const globalWar = brasil.inWar && canada.inWar && russia.inWar;
+verifyInWar = (Country) => {
+	const arrayCountriesInWar = [];
 
-//Características chave: Nome, População, Governo,Continente, Organizações internacionais, Idioma, Está em guerra?
+	if (Country.inWar === true) {
+		arrayCountriesInWar.push(Country);
+	} else {
+		alert('Esse pais não foi adicionado a lista');
+	}
+	return arrayCountriesInWar;
+};
+
+makeCountryReportLog = (Country) => {
+	const report = `${Country.countryName.toUpperCase()}\npopulação: ${
+		Country.countryPopulation
+	}\ncontinente: ${Country.countryContinent}\nforma de governo: ${
+		Country.countryGovernment
+	}\norganizações internacionais: ${Country.countryIos}\nidiomas: ${
+		Country.countryLenguage
+	}\nesta em guerra? ${Country.inWar === true ? 'Sim' : 'Não'}`;
+	return report;
+};
+
+automaticCountriesReport = (arrayCountries) => {
+	return arrayCountries.forEach((country) => {
+		console.log(makeCountryReportLog(country));
+	});
+};
+
+//testes
+console.log(automaticCountriesReport(arrayCountries));
+
+const ucrania = new Country(
+	'Ucrânia',
+	41575748,
+	'Europa',
+	['República constitucional', 'semipresidencialista'],
+	['ONU'],
+	['Ucraniano'],
+	true
+);
+
+arrayCountries.push(ucrania);
+
+console.log(automaticCountriesReport(arrayCountries));
+
+filterCountries = (Country, inputString) => {};
