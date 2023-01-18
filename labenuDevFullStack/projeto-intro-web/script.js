@@ -18,6 +18,8 @@ class Country {
 			(this.countryLenguage = countryLenguage),
 			(this.inWar = inWar);
 	}
+
+	addCountry() {}
 }
 const brasil = new Country(
 	'Brasil',
@@ -46,9 +48,10 @@ const russia = new Country(
 	['Russo'],
 	true
 );
-const globalWar = brasil.inWar && canada.inWar && russia.inWar;
-let averagePopulation =
-	(brasil.countryPopulation + canada.countryPopulation + russia.countryPopulation) / 3;
+// const globalWar = brasil.inWar && canada.inWar && russia.inWar;
+// let averagePopulation =
+// 	(brasil.countryPopulation + canada.countryPopulation + russia.countryPopulation) / 3;
+
 const arrayCountries = [russia, brasil, canada];
 
 verifyInWar = (Country) => {
@@ -79,9 +82,6 @@ automaticCountriesReport = (arrayCountries) => {
 	});
 };
 
-//testes
-console.log(automaticCountriesReport(arrayCountries));
-
 const ucrania = new Country(
 	'Ucrânia',
 	41575748,
@@ -96,4 +96,62 @@ arrayCountries.push(ucrania);
 
 console.log(automaticCountriesReport(arrayCountries));
 
-filterCountries = (Country, inputString) => {};
+const inputSearch = document.querySelector('.search-container input');
+
+const cards = document.querySelectorAll('.card h2');
+
+// inputSearch.addEventListener('input', (event) => console.log(event.target.value.trim()));
+//filtro direto dos elementos html
+const filterCountries = () => {
+	if (inputSearch != '') {
+		console.log('so far, so good, begining function filter countries');
+		for (let card of cards) {
+			let title = card.querySelector('country-name');
+			title = title.valueOf.toUpperCase();
+			let filterText = inputSearch.valueOf.toUpperCase().trim();
+			if (!title.incluedes(filterText)) {
+				card.style.display = 'none';
+			} else {
+				card.style.display = 'block';
+			}
+		}
+	} else {
+		for (let card of cards) {
+			card.style.display = 'block';
+		}
+	}
+
+	// outro modo sera?
+	// arrayCountries.filter((country) => country.countryName.toUpperCase().includes(inputSearch));
+};
+
+const cardsContainer = document.querySelector('.cards-content');
+
+function addCardOnHtml() {
+	console.log('addcard ok');
+	arrayCountries.forEach((item) => {
+		console.log('foreach ok');
+		const cardRender = document.createElement('div');
+		cardRender.classList.add('card');
+
+		const title = document.createElement('h2');
+		title.innerText = item.countryName;
+		const population = document.createElement('li');
+		population.innerHTML = item.countryPopulation;
+		const continent = document.createElement('li');
+		continent.innerText = item.countryContinent;
+		const government = document.createElement('li');
+		government.innerText = item.countryGovernment;
+		const ios = document.createElement('li');
+		ios.innerText = item.countryIos;
+		const lenguage = document.createElement('li');
+		lenguage.innerText = item.countryLenguage;
+		const inWar = document.createElement('li');
+		inWar.innerText = item.inWar;
+
+		cardRender.appendChild(title, population, continent, government, ios, lenguage, inWar);
+		cardsContainer.appendChild(cardRender);
+	});
+}
+
+addCardOnHtml();

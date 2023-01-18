@@ -1,0 +1,100 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+.page-container {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(219, 232, 245);
+}
+.sr-only {
+	display: none;
+}
+header {
+	flex-grow: 0.5;
+	justify-content: center;
+	display: flex;
+}
+.search-container {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+main {
+	display: flex;
+	flex-grow: 4;
+}
+li {
+	list-style-type: none;
+}
+.insert-country {
+	flex-basis: 12rem;
+}
+main > aside {
+	font-size: 14px;
+	padding: 1rem;
+}
+.cards-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-evenly;
+}
+.cards-container {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.card {
+	flex-basis: 18rem;
+	height: 22rem;
+	background-color: whitesmoke;
+	text-align: center;
+	border-radius: 20px;
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	text-align: justify;
+	font-size: 14px;
+}
+.card > img {
+	width: 8rem;
+	height: 4rem;
+	border-radius: 8px;
+	margin: 1rem;
+}
+.button-info {
+	border: none;
+	background-color: rgb(55, 96, 158);
+	font-size: 14px;
+	color: whitesmoke;
+	border-radius: 4px;
+	margin: 8px;
+	padding: 8px;
+	transition: all 0.3 ease;
+}
+.button-info:hover {
+	background-color: rgb(90, 118, 160);
+	cursor: pointer;
+}
+.card a {
+	text-decoration: none;
+	color: whitesmoke;
+}
+footer {
+	display: flex;
+	flex-grow: 0.5;
+	align-items: center;
+	justify-content: center;
+}
+#input-search {
+	font-size: 1rem;
+	text-align: center;
+}
