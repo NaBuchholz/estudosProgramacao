@@ -101,7 +101,6 @@ const inputSearch = document.querySelector('.search-container input');
 const cards = document.querySelectorAll('.card h2');
 
 // inputSearch.addEventListener('input', (event) => console.log(event.target.value.trim()));
-//filtro direto dos elementos html
 const filterCountries = () => {
 	if (inputSearch != '') {
 		console.log('so far, so good, begining function filter countries');
@@ -125,19 +124,27 @@ const filterCountries = () => {
 	// arrayCountries.filter((country) => country.countryName.toUpperCase().includes(inputSearch));
 };
 
-const cardsContainer = document.querySelector('.cards-content');
+const cardsContainer = document.querySelector('.cards-container');
 
-function addCardOnHtml() {
+function addArrayToCardsOnHtml(arrayCountries) {
 	console.log('addcard ok');
 	arrayCountries.forEach((item) => {
 		console.log('foreach ok');
-		const cardRender = document.createElement('div');
-		cardRender.classList.add('card');
+		const cardDiv = document.createElement('div');
+		cardDiv.classList.add('card');
+		cardsContainer.appendChild(cardDiv);
 
 		const title = document.createElement('h2');
+		title.classList.add('country-name');
 		title.innerText = item.countryName;
+		cardDiv.appendChild(title);
+
+		const countryInfos = document.createElement('ul');
+		cardDiv.appendChild(countryInfos);
+
 		const population = document.createElement('li');
 		population.innerHTML = item.countryPopulation;
+
 		const continent = document.createElement('li');
 		continent.innerText = item.countryContinent;
 		const government = document.createElement('li');
@@ -148,10 +155,8 @@ function addCardOnHtml() {
 		lenguage.innerText = item.countryLenguage;
 		const inWar = document.createElement('li');
 		inWar.innerText = item.inWar;
-
-		cardRender.appendChild(title, population, continent, government, ios, lenguage, inWar);
-		cardsContainer.appendChild(cardRender);
+		countryInfos.appendChild(population, continent, government, ios, lenguage, inWar);
 	});
 }
 
-addCardOnHtml();
+addCardsOnHtml(arrayCountries);
