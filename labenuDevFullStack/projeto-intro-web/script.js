@@ -1,78 +1,71 @@
 //Tópico escolhido para desenvolvimento: Países
 //Características chave: Nome, População, Governo,Continente, Organizações internacionais, Idioma, Está em guerra?
-class Country {
-	constructor(
-		countryName,
-		countryPopulation,
-		countryContinent,
-		countryGovernment,
-		countryIos,
-		countryLenguage,
-		inWar
-	) {
-		(this.countryName = countryName),
-			(this.countryPopulation = countryPopulation),
-			(this.countryContinent = countryContinent),
-			(this.countryGovernment = countryGovernment),
-			(this.countryIos = countryIos),
-			(this.countryLenguage = countryLenguage),
-			(this.inWar = inWar);
-	}
 
-	addCountry() {}
-}
-const brasil = new Country(
-	'Brasil',
-	213317639,
-	'América',
-	'República',
-	['ONU', 'UNESCO'],
-	['Português'],
-	false
-);
-const canada = new Country(
-	'Canada',
-	38005238,
-	'América',
-	'Monarquia Constitucional',
-	['UNESCO', 'OMS'],
-	['Inglês', 'Francês'],
-	false
-);
-const russia = new Country(
-	'Russia',
-	144526636,
-	'Ásia',
-	'Semipresidencialista',
-	['OTAM'],
-	['Russo'],
-	true
-);
-// const globalWar = brasil.inWar && canada.inWar && russia.inWar;
-// let averagePopulation =
-// 	(brasil.countryPopulation + canada.countryPopulation + russia.countryPopulation) / 3;
+let arrayCountries = [
+	{
+		countryName: 'Brasil',
+		countryPopulation: 213317639,
+		countryContinent: 'América',
+		countryGovernment: ['República'],
+		countryIos: ['ONU', 'UNESCO'],
+		countryLenguage: ['Português'],
+		inWar: false,
+		countryFlag:
+			'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/749px-Flag_of_Brazil.svg.png',
+	},
+	{
+		countryName: 'Canadá',
+		countryPopulation: 38005238,
+		countryContinent: 'América',
+		countryGovernment: ['Monarquia Constitucional'],
+		countryIos: ['UNESCO', 'OMS'],
+		countryLenguage: ['Inglês', 'Francês'],
+		inWar: false,
+		countryFlag:
+			'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/1280px-Flag_of_Canada.svg.png',
+	},
+	{
+		countryName: 'Rússia',
+		countryPopulation: 144526636,
+		countryContinent: 'Ásia',
+		countryGovernment: ['Semipresidencialista'],
+		countryIos: ['ONU'],
+		countryLenguage: ['Russo'],
+		inWar: true,
+		countryFlag:
+			'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/1280px-Flag_of_Russia.svg.png',
+	},
+];
 
-const arrayCountries = [russia, brasil, canada];
+arrayCountries.push({
+	countryName: 'Ucrânia',
+	countryPopulation: 41575748,
+	countryContinent: 'Europa',
+	countryGovernment: ['República constitucional', 'semipresidencialista'],
+	ois: ['OTAM'],
+	countryLenguage: ['Ucraniano'],
+	inWar: true,
+	countryFlag:
+		'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1024px-Flag_of_Ukraine.svg.png',
+});
 
-verifyInWar = (Country) => {
-	const arrayCountriesInWar = [];
+let averageCountryPopulation =
+	arrayCountries.reduce(
+		(accumulator, currentValue) => accumulator + currentValue.countryPopulation,
+		0
+	) /
+		arrayCountries.length -
+	1;
+let globalWar = arrayCountries.inWar === true ? 'Estão em guerra' : 'Não estão em guerra';
 
-	if (Country.inWar === true) {
-		arrayCountriesInWar.push(Country);
-	} else {
-		alert('Esse pais não foi adicionado a lista');
-	}
-	return arrayCountriesInWar;
-};
-
-makeCountryReportLog = (Country) => {
-	const report = `${Country.countryName.toUpperCase()}\npopulação: ${
-		Country.countryPopulation
-	}\ncontinente: ${Country.countryContinent}\nforma de governo: ${
-		Country.countryGovernment
-	}\norganizações internacionais: ${Country.countryIos}\nidiomas: ${
-		Country.countryLenguage
-	}\nesta em guerra? ${Country.inWar === true ? 'Sim' : 'Não'}`;
+makeCountryReportLog = (arrayCountries) => {
+	const report = `${arrayCountries.countryName.toUpperCase()}\npopulação: ${
+		arrayCountries.countryPopulation
+	}\ncontinente: ${arrayCountries.countryContinent}\nforma de governo: ${
+		arrayCountries.countryGovernment
+	}\norganizações internacionais: ${arrayCountries.countryIos}\nidiomas: ${
+		arrayCountries.countryLenguage
+	}\nesta em guerra? ${arrayCountries.inWar === true ? 'Sim' : 'Não'}`;
 	return report;
 };
 
@@ -81,82 +74,43 @@ automaticCountriesReport = (arrayCountries) => {
 		console.log(makeCountryReportLog(country));
 	});
 };
+automaticCountriesReport(arrayCountries);
 
-const ucrania = new Country(
-	'Ucrânia',
-	41575748,
-	'Europa',
-	['República constitucional', 'semipresidencialista'],
-	['ONU'],
-	['Ucraniano'],
-	true
+console.log(
+	`A média de habitantes é de ${averageCountryPopulation} e o estado atual de guerra entre TODOS eles é: ${globalWar}`
 );
 
-arrayCountries.push(ucrania);
-
-console.log(automaticCountriesReport(arrayCountries));
-
 const inputSearch = document.querySelector('.search-container input');
+let cardContainer = document.getElementById('cards-container');
+let originalHtml = cardContainer.innerHTML;
 
-const cards = document.querySelectorAll('.card h2');
-
-// inputSearch.addEventListener('input', (event) => console.log(event.target.value.trim()));
-const filterCountries = () => {
-	if (inputSearch != '') {
-		console.log('so far, so good, begining function filter countries');
-		for (let card of cards) {
-			let title = card.querySelector('country-name');
-			title = title.valueOf.toUpperCase();
-			let filterText = inputSearch.valueOf.toUpperCase().trim();
-			if (!title.incluedes(filterText)) {
-				card.style.display = 'none';
-			} else {
-				card.style.display = 'block';
-			}
-		}
-	} else {
-		for (let card of cards) {
-			card.style.display = 'block';
-		}
-	}
-
-	// outro modo sera?
-	// arrayCountries.filter((country) => country.countryName.toUpperCase().includes(inputSearch));
-};
-
-const cardsContainer = document.querySelector('.cards-container');
-
-function addArrayToCardsOnHtml(arrayCountries) {
-	console.log('addcard ok');
-	arrayCountries.forEach((item) => {
-		console.log('foreach ok');
-		const cardDiv = document.createElement('div');
-		cardDiv.classList.add('card');
-		cardsContainer.appendChild(cardDiv);
-
-		const title = document.createElement('h2');
-		title.classList.add('country-name');
-		title.innerText = item.countryName;
-		cardDiv.appendChild(title);
-
-		const countryInfos = document.createElement('ul');
-		cardDiv.appendChild(countryInfos);
-
-		const population = document.createElement('li');
-		population.innerHTML = item.countryPopulation;
-
-		const continent = document.createElement('li');
-		continent.innerText = item.countryContinent;
-		const government = document.createElement('li');
-		government.innerText = item.countryGovernment;
-		const ios = document.createElement('li');
-		ios.innerText = item.countryIos;
-		const lenguage = document.createElement('li');
-		lenguage.innerText = item.countryLenguage;
-		const inWar = document.createElement('li');
-		inWar.innerText = item.inWar;
-		countryInfos.appendChild(population, continent, government, ios, lenguage, inWar);
+inputSearch.addEventListener('input', () => {
+	let filterCountries = arrayCountries.filter((item) => {
+		return item.countryName.toLowerCase().includes(inputSearch.value.toLowerCase());
 	});
-}
+	cardContainer.innerHTML = '';
+	let createElement = '';
+	for (const i of filterCountries) {
+		createElement += `<div class="card">
+		<img src="${i.countryFlag}" alt="Bandeira ${i.countryName}" class="img-flag">
+		<h2 class="country-name">${i.countryName}</h2>
+		<ul class="country-infos">
+			<li><p>População: ${i.countryPopulation}</p></li>
+			<li><p>Continente: ${i.countryContinent}</p></li>
+			<li><p>Governo: ${i.countryGovernment}</p></li>
+			<li><p>Organizações Internacionais: ${i.countryIos}</p></li>
+			<li><p>Língua: ${i.countryLenguage}</p></li>
+			<li><p>Está em guerra? ${i.inWar === true ? 'Sim' : 'Não'}</p></li>
+		</ul>
+		<button class="button-info">
+			<a href="https://pt.wikipedia.org/wiki/${i.countryName}" target="_blank">Ver Detalhes</a>
+		</button>
+	</div>
+		`;
+	}
+	cardContainer.innerHTML = createElement;
 
-addCardsOnHtml(arrayCountries);
+	if (inputSearch.value.length === 0) {
+		cardContainer.innerHTML = originalHtml;
+	}
+});

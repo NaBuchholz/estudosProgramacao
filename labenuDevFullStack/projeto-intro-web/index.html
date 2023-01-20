@@ -4,8 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
-		<script src="script.js"></script>
-		<title>Document</title>
+		<title>Resumo de Países</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -17,30 +16,18 @@
 			<header>
 				<div class="search-container">
 					<label for="input-search" class="sr-only">Filter</label>
-					<input
-						type="text"
-						name="input-search"
-						id="input-search"
-						placeholder="Digite o país..."
-						oninput="filterCountries()" />
+					<input type="text" name="input-search" id="input-search" placeholder="Digite o país..." />
 				</div>
 			</header>
 			<main>
-				<aside class="insert-country">
-					<h2>Bem - vindo !</h2>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quisquam molestias
-						perferendis rerum cum alias corrupti itaque quae culpa doloribus aperiam nisi, quo iste,
-						recusandae laborum inventore error voluptatum veritatis!
-					</p>
-				</aside>
-				<div class="cards-container">
+				<div class="cards-container" id="cards-container">
 					<div class="cards-content">
 						<div class="cards-wrapper">
 							<div class="card">
 								<img
 									src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/749px-Flag_of_Brazil.svg.png"
-									alt="bandeira do brasil" />
+									alt="Bandeira do Brasil"
+									class="img-flag" />
 								<h2 class="country-name">Brasil</h2>
 								<ul class="country-infos">
 									<li><p>População: 213.317.639</p></li>
@@ -57,7 +44,8 @@
 							<div class="card">
 								<img
 									src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Canada.svg/1280px-Flag_of_Canada.svg.png"
-									alt="" />
+									alt="Bandeira do Canadá"
+									class="img-flag" />
 								<h2 class="country-name">Canadá</h2>
 								<ul class="country-infos">
 									<li><p>População: 38.005.238</p></li>
@@ -76,7 +64,8 @@
 							<div class="card">
 								<img
 									src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/1280px-Flag_of_Russia.svg.png"
-									alt="" />
+									alt="Bandeira da Rússia"
+									class="img-flag" />
 								<h2 class="country-name">Russia</h2>
 								<ul class="country-infos">
 									<li><p>População: 144.526.636</p></li>
@@ -84,6 +73,26 @@
 									<li><p>Governo: Semipresidencialista</p></li>
 									<li><p>Organizações Internacionais: OTAM</p></li>
 									<li><p>Língua: Russo</p></li>
+									<li><p>Está em guerra? Sim</p></li>
+								</ul>
+								<button class="button-info">
+									<a href="https://pt.wikipedia.org/wiki/R%C3%BAssia" target="_blank"
+										>Ver Detalhes</a
+									>
+								</button>
+							</div>
+							<div class="card">
+								<img
+									src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1024px-Flag_of_Ukraine.svg.png"
+									alt="Bandeira da Ucrânia"
+									class="img-flag" />
+								<h2 class="country-name">Ucrânia</h2>
+								<ul class="country-infos">
+									<li><p>População: 41.575.748</p></li>
+									<li><p>Continente: Europa</p></li>
+									<li><p>Governo: República constitucional, semipresidencialista</p></li>
+									<li><p>Organizações Internacionais: ONU</p></li>
+									<li><p>Língua: Ucraniano</p></li>
 									<li><p>Está em guerra? Sim</p></li>
 								</ul>
 								<button class="button-info">
@@ -104,4 +113,5 @@
 			</footer>
 		</div>
 	</body>
+	<script src="script.js"></script>
 </html>
