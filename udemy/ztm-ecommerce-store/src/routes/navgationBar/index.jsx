@@ -9,14 +9,19 @@ const NavigationBar = () => {
 			<div className="navigation">
 				<Link
 					className="logo-container"
-					to="#">
+					to="/">
 					<CrwnLogo className="logo" />
 				</Link>
 				<div className="nav-links-container">
 					<Link
 						className="nav-link"
 						to="#">
-						Shop
+						SHOP
+					</Link>
+					<Link
+						className="nav-link"
+						to="/sing-in">
+						SING IN
 					</Link>
 				</div>
 			</div>
